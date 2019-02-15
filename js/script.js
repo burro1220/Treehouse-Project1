@@ -37,46 +37,39 @@ let quotes = [
     tags: 'wisdom'
   },
   {
-    quote: "Here is a quote5.",
-    source: "Random Author",
-    citation: "Book",
-    year: 1977,
-    tags: 'Historical'
+    quote: "Kindness is the language which the deaf can hear and the blind can see.",
+    source: "Mark Twain",
+    year: 'circa 1890',
+    tags: 'author'
   },
   {
-    quote: "Here is a quote6.",
-    source: "Random Author",
-    citation: "Book",
-    year: 1977,
-    tags: 'Historical'
+    quote: "What good is the warmth of summer, without the cold of winter to give it sweetness.",
+    source: "John Steinbeck",
+    year: 'circa 1950',
+    tags: 'author'
   },
   {
-    quote: "Here is a quote7.",
-    source: "Random Author",
-    citation: "Book",
-    year: 1977,
-    tags: 'Historical'
+    quote: "Goals on the road to achievement cannot be achieved withut disipline and consistency.",
+    source: "Denzel Washington",
+    year: 'circa 1996',
+    tags: 'actor'
   },
   {
-    quote: "Here is a quote.8",
-    source: "Random Author",
-    citation: "Book",
-    year: 1977,
-    tags: 'Historical'
+    quote: "Optimism is the faith that leads to achievement.",
+    source: "Helen Keller",
+    tags: 'women'
   },
   {
-    quote: "Here is a quote9.",
-    source: "Random Author",
-    citation: "Book",
-    year: 1977,
-    tags: 'Historical'
+    quote: "Knowing what must be done does away with fear.",
+    source: "Rosa Parks",
+    year: 'circa 1980',
+    tags: 'women'
   },
   {
-    quote: "Here is a quote10.",
-    source: "Random Author",
-    citation: "Book",
-    year: 1977,
-    tags: 'Historical'
+    quote: "It's one of the greates gifts you can give yourself, to forgive. Forgive everybody.",
+    source: "Maya Angelou",
+    year: 'circa 1995',
+    tags: 'women'
   },
 ];
 
@@ -123,18 +116,10 @@ function printQuote() {
   // set the `innerHTML` of the `quote-box` div to the HTML string
 document.getElementById('quote-box').innerHTML = finalString;
 
+};
 
-}
-
+// set interval to run printQuote every 5 seconds
 setInterval(printQuote, 5000);
-/***
-  When the "Show another quote" button is clicked, the event listener
-  below will be triggered, and it will call, or "invoke", the `printQuote`
-  function. So do not make any changes to the line of code below this
-  comment.
-***/
 
+// add click event listener to loadQuote button and print a new random quote when triggered
 document.getElementById('loadQuote').addEventListener("click", printQuote, false);
-
-
-// Remember to delete the comments that came with this file, and replace them with your own code comments.
