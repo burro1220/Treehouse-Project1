@@ -91,7 +91,8 @@ let quotes = [
   to return an item from the array
 ***/
 function getRandomQuote(arr){
-  let randomIndex = Math.floor(Math.random() * (arr.length + 1));
+  let randomIndex = Math.floor(Math.random() * (arr.length));
+  console.log(randomIndex);
   return arr[randomIndex];
 };
 
