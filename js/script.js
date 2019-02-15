@@ -49,7 +49,7 @@ let quotes = [
     tags: 'author'
   },
   {
-    quote: "Goals on the road to achievement cannot be achieved withut disipline and consistency.",
+    quote: "Goals on the road to achievement cannot be achieved without discipline and consistency.",
     source: "Denzel Washington",
     year: 'circa 1996',
     tags: 'actor'
@@ -113,13 +113,44 @@ function printQuote() {
   // finish off finalString
   finalString += '</p>';
 
-  // set the `innerHTML` of the `quote-box` div to the HTML string
+// set the `innerHTML` of the `quote-box` div to the HTML string
 document.getElementById('quote-box').innerHTML = finalString;
+
 
 };
 
+// FXs for changing background getColor
+// FX to get random number between 1 and 256
+
+function getRgb() {
+  let rgb = Math.floor(Math.random()* 256 +1);
+  return rgb;
+};
+// create RGB color using FX getRgb
+function getColor() {
+  let r = getRgb();
+  let g = getRgb();
+  let b = getRgb();
+  let color = 'rgb(' + r + ',' + g + ',' + b + ')';
+  return color;
+
+};
+
+//use FX getColor and set background color to value
+function setColor() {
+let color = getColor();
+document.body.style.backgroundColor = color;
+}
+
+
 // set interval to run printQuote every 5 seconds
-setInterval(printQuote, 5000);
+setInterval(printQuote, 10000);
+
+//set interval to change background color with change of quote
+setInterval(setColor, 10000);
 
 // add click event listener to loadQuote button and print a new random quote when triggered
 document.getElementById('loadQuote').addEventListener("click", printQuote, false);
+
+// add click event listener to loadQuote button and change background color when triggered
+document.getElementById('loadQuote').addEventListener("click", setColor, false);
