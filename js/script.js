@@ -104,6 +104,11 @@ function printQuote() {
     finalString += '<span class="citation">' + fullString.citation + '</span>';
   };
 
+  // if year exists for that quote add it to finalString
+  if (fullString.year) {
+    finalString += '<span class="citation">' + fullString.year + '</span>';
+  };
+
 
   // if tags exist for random quote add it to finalString
   if (fullString.tags) {
