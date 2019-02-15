@@ -123,9 +123,11 @@ function printQuote() {
 
   // set the `innerHTML` of the `quote-box` div to the HTML string
 document.getElementById('quote-box').innerHTML = finalString;
-console.log(finalString);
 
-}
+
+};
+
+var intervalID = window.setInterval(printQuote, 5000);
 
 
 /***
