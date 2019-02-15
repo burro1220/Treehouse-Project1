@@ -57,19 +57,19 @@ let quotes = [
   {
     quote: "Optimism is the faith that leads to achievement.",
     source: "Helen Keller",
-    tags: 'women'
+    tags: 'wise women'
   },
   {
     quote: "Knowing what must be done does away with fear.",
     source: "Rosa Parks",
     year: 'circa 1980',
-    tags: 'women'
+    tags: 'wise women'
   },
   {
     quote: "It's one of the greates gifts you can give yourself, to forgive. Forgive everybody.",
     source: "Maya Angelou",
     year: 'circa 1995',
-    tags: 'women'
+    tags: 'wise women'
   },
 ];
 
@@ -120,27 +120,27 @@ document.getElementById('quote-box').innerHTML = finalString;
 };
 
 // FXs for changing background getColor
-// FX to get random number between 1 and 256
 
-function getRgb() {
-  let rgb = Math.floor(Math.random()* 256 +1);
-  return rgb;
-};
-// create RGB color using FX getRgb
-function getColor() {
-  let r = getRgb();
-  let g = getRgb();
-  let b = getRgb();
-  let color = 'rgb(' + r + ',' + g + ',' + b + ')';
-  return color;
 
-};
-
-//use FX getColor and set background color to value
+//use FX getColor and set background color to value while also looking at
+//background color to adjust font color between white and black
+//from https://stackoverflow.com/questions/11867545/change-text-color-based-on-brightness-of-the-covered-background-area
+let rgb = [255, 0, 0];
 function setColor() {
-let color = getColor();
-document.body.style.backgroundColor = color;
-}
+  rgb[0] = Math.round(Math.random() * 255);
+  rgb[1] = Math.round(Math.random() * 255);
+  rgb[2] = Math.round(Math.random() * 255);
+
+  // http://www.w3.org/TR/AERT#color-contrast
+   var o = Math.round(((parseInt(rgb[0]) * 299) +
+                       (parseInt(rgb[1]) * 587) +
+                       (parseInt(rgb[2]) * 114)) / 1000);
+   var fore = (o > 125) ? 'black' : 'white';
+   var back = 'rgb(' + rgb[0] + ',' + rgb[1] + ',' + rgb[2] + ')';
+   $('body').css('color', fore);
+   $('body').css('background-color', back);
+
+ };
 
 
 // set interval to run printQuote every 5 seconds
