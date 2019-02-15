@@ -12,32 +12,29 @@ Would like to import quotes from external file but my syntax fell short.
 ***/
 let quotes = [
   {
-    quote: "Here is a quote1.",
-    source: "Random Author",
-    citation: "Book",
-    year: 1977,
-    tags: 'Historical'
+    quote: "Where there is shouting, there is no true knowledge.",
+    source: "Leonardo da Vinci",
+    tags: 'wisdom'
   },
   {
-    quote: "Here is a quote2.",
-    source: "Random Author",
-    citation: "Book",
-    year: 1977,
-    tags: 'Historical'
+    quote: "Be not wise in thine own eyes; fear the LORD, and depart from evil.",
+    source: "unknown",
+    citation: "Proverbs 3:7",
+    year: '700 bc',
+    tags: 'biblical'
   },
   {
-    quote: "Here is a quote3.",
-    source: "Random Author",
-    citation: "Book",
-    year: 1977,
-    tags: 'Historical'
+    quote: "Dear children, let us not love with words or speech but with actions and in truth.",
+    source: "John the Apostle",
+    citation: "1 John 3:18",
+    year: 'circa AD 100',
+    tags: 'biblical'
   },
   {
-    quote: "Here is a quote4.",
-    source: "Random Author",
-    citation: "Book",
-    year: 1977,
-    tags: 'Historical'
+    quote: "It does not matter how slowly you go as long as you do not stop.",
+    source: "Confucius",
+    year: 'circa 528 bc',
+    tags: 'wisdom'
   },
   {
     quote: "Here is a quote5.",
@@ -92,7 +89,6 @@ let quotes = [
 ***/
 function getRandomQuote(arr){
   let randomIndex = Math.floor(Math.random() * (arr.length));
-  console.log(randomIndex);
   return arr[randomIndex];
 };
 
@@ -118,7 +114,7 @@ function printQuote() {
 
   // if tags exist for random quote add it to finalString
   if (fullString.tags) {
-    finalString += '<span class="tags">, ' + fullString.tags + '</span>';
+    finalString += '<span class="tags">' + fullString.tags + '</span>';
   };
 
   // finish off finalString
@@ -126,11 +122,11 @@ function printQuote() {
 
   // set the `innerHTML` of the `quote-box` div to the HTML string
 document.getElementById('quote-box').innerHTML = finalString;
-console.log(finalString);
+
 
 }
 
-
+setInterval(printQuote, 5000);
 /***
   When the "Show another quote" button is clicked, the event listener
   below will be triggered, and it will call, or "invoke", the `printQuote`
