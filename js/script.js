@@ -66,7 +66,7 @@ let quotes = [
     tags: 'wise women'
   },
   {
-    quote: "It's one of the greates gifts you can give yourself, to forgive. Forgive everybody.",
+    quote: "It's one of the greatest gifts you can give yourself, to forgive. Forgive everybody.",
     source: "Maya Angelou",
     year: 'circa 1995',
     tags: 'wise women'
@@ -121,6 +121,12 @@ function printQuote() {
 // set the `innerHTML` of the `quote-box` div to the HTML string
 document.getElementById('quote-box').innerHTML = finalString;
 
+// add some jquery dazzle using fadeIn
+$(".quote").hide().fadeIn(3000);
+$(".source").hide().fadeIn(5000);
+$(".citation").hide().fadeIn(5000);
+$(".year").hide().fadeIn(5000);
+$(".tags").hide().fadeIn(5000);
 
 };
 
