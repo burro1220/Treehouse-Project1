@@ -86,7 +86,17 @@ function setColor() {
    var back = 'rgb(' + rgb[0] + ',' + rgb[1] + ',' + rgb[2] + ')';
    $('body').css('color', fore);
    $('body').css('background-color', back);
-
+   //console.log(back);
+   //grab background color and use shade FX from: https://stackoverflow.com/questions/5560248/programmatically-lighten-or-darken-a-hex-color-or-rgb-and-blend-colors
+   //to change color of button
+   function shadeRGBColor(color, percent) {
+    var f=color.split(","),t=percent<0?0:255,p=percent<0?percent*-1:percent,R=parseInt(f[0].slice(4)),G=parseInt(f[1]),B=parseInt(f[2]);
+    return "rgb("+(Math.round((t-R)*p)+R)+","+(Math.round((t-G)*p)+G)+","+(Math.round((t-B)*p)+B)+")";
+  };
+    //set button background-color to shaded version of background color
+    $('#loadQuote').css('background-color', shadeRGBColor(back, .50));
+    //set button text to dynamic color (white or black) same as other text
+    $('#loadQuote').css('color', fore);
  };
 
 
