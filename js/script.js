@@ -94,7 +94,7 @@ function setColor() {
     return "rgb("+(Math.round((t-R)*p)+R)+","+(Math.round((t-G)*p)+G)+","+(Math.round((t-B)*p)+B)+")";
   };
     //set button background-color to shaded version of background color
-    $('#loadQuote').css('background-color', shadeRGBColor(back, .50));
+    $('#loadQuote').css('background-color', shadeRGBColor(back, .30));
     //set button text to dynamic color (white or black) same as other text
     $('#loadQuote').css('color', fore);
  };
