@@ -84,8 +84,8 @@ function setColor() {
                        (parseInt(rgb[2]) * 114)) / 1000);
    var fore = (o > 125) ? 'black' : 'white';
    var back = 'rgb(' + rgb[0] + ',' + rgb[1] + ',' + rgb[2] + ')';
-   $('body').css('color', fore);
-   $('body').css('background-color', back);
+   $('#overlay').css('color', fore);
+   $('#overlay').css('background-color', back);
    //console.log(back);
    //grab background color and use shade FX from: https://stackoverflow.com/questions/5560248/programmatically-lighten-or-darken-a-hex-color-or-rgb-and-blend-colors
    //to change color of button

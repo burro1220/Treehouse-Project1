@@ -1,11 +1,23 @@
 /* Random Quote Generator Styles */
-
 body {
-  background-color: #36b55c;
+  background-color: green;
+  background-image: url('../dark-honeycomb.png');
   color: white;
-  font-family: 'Playfair Display', serif;
+   
 }
-
+#overlay {
+  opacity: .4;
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  color: #FFFFFF;
+  justify-content: center;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  border-radius: 5px;
+}
 #quote-box {
   position: absolute;
   top: 20%;
@@ -13,6 +25,7 @@ body {
   right: 10%;
   width: 80%;
   line-height: .5;
+  
 }
 
 .quote {
