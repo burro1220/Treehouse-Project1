@@ -1,12 +1,11 @@
 /* Random Quote Generator Styles */
 body {
-  background-color: green;
   background-image: url('../dark-honeycomb.png');
   color: white;
    
 }
 #overlay {
-  opacity: .4;
+  opacity: .6;
   display: flex;
   flex-direction: column;
   position: fixed;
